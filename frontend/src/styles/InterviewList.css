@@ -1,0 +1,57 @@
+.interview-body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+  padding-top: 100px;
+  width: 60%;
+  gap: 30px;
+  color: white;
+}
+
+.header1,
+.header2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  gap: 15px;
+  padding: 10px;
+}
+
+.header1 {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.upcoming-interviews {
+  background-color: #1c83e11a;
+}
+.upcoming-interviews p {
+  color: #3d9df3;
+  padding: 20px;
+  border: 1px solid #1c83e11a;
+  border-radius: 5px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.search-box input {
+  padding: 10px;
+  background-color: #222937;
+  font-size: 16px;
+  border: 0px;
+  color: white;
+  border-radius: 5px;
+  outline: 1px transparent;
+  transition: outline 0.1s linear;
+}
+.search-box input:focus {
+  outline: 1px solid red;
+}
