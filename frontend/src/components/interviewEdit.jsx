@@ -29,7 +29,7 @@ const InterviewEdit = () => {
       // eslint-disable-next-line
   }, []);
   const handleDelete = (e) => {
-    fetch(`  https://interview-scheduler-5mj2.onrender.com/api/v1/interviews/api/v1/interviews/${params.id}`, {
+    fetch("https://interview-scheduler-5mj2.onrender.com/api/v1/interviews/api/v1/interviews/${params.id}", {
       method: "DELETE",
     })
       .then((data) => {
