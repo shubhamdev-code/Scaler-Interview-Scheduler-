@@ -7,7 +7,7 @@ const InterviewList = () => {
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/interviews")
+    fetch("https://interview-scheduler-5mj2.onrender.com/api/v1/interviews/api/v1/interviews")
       .then((response) => response.json())
       .then((data) => {
         setData(data);

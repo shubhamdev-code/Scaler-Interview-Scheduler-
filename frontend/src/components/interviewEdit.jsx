@@ -12,7 +12,7 @@ const InterviewEdit = () => {
   const [data, setData] = useState();
   const [load, setLoad] = useState(true);
   console.log(params.id);
-  const apiURL = `http://localhost:5000/api/v1/interviews/${params.id}`;
+  const apiURL = `https://interview-scheduler-5mj2.onrender.com/api/v1/interviews/api/v1/interviews/${params.id}`;
 
   const handleOpen = (e) => {
     document.getElementById("side-body").style.marginLeft = "0px";
@@ -28,9 +28,8 @@ const InterviewEdit = () => {
       });
       // eslint-disable-next-line
   }, []);
-
   const handleDelete = (e) => {
-    fetch(`http://localhost:5000/api/v1/interviews/${params.id}`, {
+    fetch(`  https://interview-scheduler-5mj2.onrender.com/api/v1/interviews/api/v1/interviews/${params.id}`, {
       method: "DELETE",
     })
       .then((data) => {

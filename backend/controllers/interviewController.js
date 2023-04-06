@@ -2,8 +2,7 @@ const Interview = require("../models/interviewModel");
 const checkOverlap = require("../utils/checkOverlap");
 
 exports.getAllInterviews = async (req, res, next) => {
-  const interview = await Interview.find();
-
+  const interview = await Interview.find().sort({ endTime: -1 });
   return res.json(interview);
 };
 
@@ -123,6 +122,7 @@ exports.UpdateInterview = async (req, res, next) => {
         check = checkOverlap(result[resInt], startTime, endTime);
         if (check === true) {
           console.log(`${result[resInt]} the participant is busy`);
+
           flag = true;
           break;
         }
@@ -152,5 +152,5 @@ exports.DeleteInterview = async (req, res, next) => {
   if (!interview) {
     return res.send("Interview not found");
   }
-  return res.send({message: "success"});
+  return res.send({ message: "success" });
 };

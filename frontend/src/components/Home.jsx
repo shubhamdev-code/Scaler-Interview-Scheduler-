@@ -14,7 +14,7 @@ const Home = () => {
     <div className="App">
       <div className="top-bar"></div>
       <IoIosArrowForward className="open-button" size={24} onClick={handleOpen} />;
-      <SideBar url={`http://localhost:5000/api/v1/interviews`} heading={"Create"} />
+      <SideBar url={`https://interview-scheduler-5mj2.onrender.com/api/v1/interviews`} heading={"Create"} />
       <InterviewList />
     </div>
   );
