@@ -4,6 +4,7 @@ import InterviewCard from "./InterviewCard";
 
 const InterviewList = () => {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
@@ -11,32 +12,42 @@ const InterviewList = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        setFilteredData(data);
         setLoad(false);
       });
   }, []);
 
+  function handleSearch(query) {
+    setFilteredData(
+      data.filter((meeting) =>
+        meeting.participants.some((participant) =>
+          participant.label.includes(query)
+        )
+      )
+    );
+  }
+
   return (
     <div className="interview-body">
+      <h1 style={{ textAlign: "left", paddingLeft: "10px" }}>Interview List</h1>
+      <div className="search-box">
+        <input
+          type="text"
+          placeholder="Search Participants by Email"
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+      </div>
       {load ? (
         <h1>Loading...</h1>
       ) : (
         <>
-          <h1 style={{textAlign: "left", paddingLeft: "10px"}}>Interview List</h1>
           <div className="header1">
             <div className="upcoming-interviews">
-              {data.length === 0 ? (
+              {filteredData.length === 0 ? (
                 <p>No Interviews Found</p>
               ) : (
-                data.map((oneData) => <InterviewCard data={oneData} />)
+                filteredData.map((oneData) => <InterviewCard data={oneData} />)
               )}
-            </div>
-          </div>
-
-          <div className="header2">
-            <h1>Interview List by Participant</h1>
-            <div className="search-box">
-              <label>Participant</label>
-              <input type="text" placeholder="Search Participants" />
             </div>
           </div>
         </>
