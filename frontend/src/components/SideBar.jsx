@@ -27,8 +27,7 @@ const SideBar = (props) => {
       interviews: [],
     },
     {
-      label: "shubhamkoyi@scaler.com",
-      // label: "Shubham Scaler",
+      label: "shubhamkoyi@juspay.com",
       role: "Interviewer",
       interviews: [],
     },
