@@ -15,9 +15,9 @@ const InterviewCard = (props) => {
     day: "numeric",
   };
 
-  let startShow = new Date(startDate).toLocaleTimeString("en", options);
+  let startShow = new Date(startDate).toLocaleTimeString("en-GB", options);
 
-  let endShow = new Date(endDate).toLocaleTimeString("en", options);
+  let endShow = new Date(endDate).toLocaleTimeString("en-GB", options);
 
   return (
     <div
