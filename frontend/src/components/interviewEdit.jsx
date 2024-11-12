@@ -69,9 +69,9 @@ const InterviewEdit = () => {
             <h2>Your current interview details: </h2>
             <h3>{`From: ${new Date(
               data.startTime
-            ).toLocaleString()} - To: ${new Date(
+            ).toLocaleString('en-GB')} - To: ${new Date(
               data.endTime
-            ).toLocaleString()}`}</h3>
+            ).toLocaleString('en-GB')}`}</h3>
 
             {data.participants.map((participant) => (
               <p>
